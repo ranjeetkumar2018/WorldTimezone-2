@@ -28,7 +28,7 @@
 				<configuration>
 				
 				<cloudHubDeployment>
-				<worker>1</worker>
+				<workers>1</workers>
 				<workerType>Micro</workerType>
 				<userName>demo_2020</userName>
 				<environment>Sandbox</environment>
