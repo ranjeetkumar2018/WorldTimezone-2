@@ -31,7 +31,7 @@
 				<worker>1</worker>
 				<workerType>Micro</workerType>
 				<userName>demo_2020</userName>
-				<enviournment>Sandbox</enviournment>
+				<environment>Sandbox</environment>
 				<applicationName>worldtimezone2-service</applicationName>
 				<password>Mule@123</password>
 				<version>4.2.2</version>
