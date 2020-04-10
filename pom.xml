@@ -30,7 +30,7 @@
 				<cloudHubDeployment>
 				<workers>1</workers>
 				<workerType>Micro</workerType>
-				<userName>demo_2020</userName>
+				<username>demo_2020</username>
 				<environment>Sandbox</environment>
 				<applicationName>worldtimezone2-service</applicationName>
 				<password>Mule@123</password>
