@@ -12,7 +12,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:request-config>
 	<flow name="world-cicd-demo2Flow" doc:id="d6154f5a-88ae-4c4a-96aa-d79e416788bf" >
 		<http:listener doc:name="GET -/{region}/{city}" doc:id="3cad4f49-8bd2-4c06-b46b-88056ade76c8" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
-		<logger level="INFO" doc:name="Logger" doc:id="64df6a00-6fb5-41e4-a29c-899c07b77e59" message="---First stage-- exuted by logger-1----"/>
+		<logger level="INFO" doc:name="Logger" doc:id="64df6a00-6fb5-41e4-a29c-899c07b77e59" message="---First stage-- exuted by logger-1---------"/>
 		<http:request method="GET" doc:name="Request" doc:id="9b1dd89d-cd64-45ea-b815-73bceb58dc2a" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
