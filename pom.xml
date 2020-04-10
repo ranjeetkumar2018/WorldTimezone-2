@@ -34,7 +34,7 @@
 				<environment>Sandbox</environment>
 				<applicationName>worldtimezone2-service</applicationName>
 				<password>Mule@123</password>
-				<version>4.2.2</version>
+				<muleVersion>4.2.2</muleVersion>
 				</cloudHubDeployment>
 				
 				</configuration>
