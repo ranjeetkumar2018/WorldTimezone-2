@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="285184ff-304d-4ccf-bcc5-98b498589e22" basePath="timezone">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="2f1ec8b8-6f00-4505-8729-a4a9558b6af0" basePath="/api/timezone" >
+		<http:request-connection host="worldtimeapi.org" />
+	</http:request-config>
+	<flow name="world-cicd-demo2Flow" doc:id="d6154f5a-88ae-4c4a-96aa-d79e416788bf" >
+		<http:listener doc:name="GET -/{region}/{city}" doc:id="3cad4f49-8bd2-4c06-b46b-88056ade76c8" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="64df6a00-6fb5-41e4-a29c-899c07b77e59" message="---First stage-- exuted by logger-1----"/>
+		<http:request method="GET" doc:name="Request" doc:id="9b1dd89d-cd64-45ea-b815-73bceb58dc2a" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	
+	region : attributes.uriParams.region,
+	
+	city : attributes.uriParams.city
+}]]]></http:uri-params>
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="ecfd7706-fcd2-40e5-83c6-d406e16c5347" message="--Final step completed---------"/>
+		<logger level="INFO" doc:name="Logger" doc:id="0f107cdf-58aa-44d7-aa42-43dd7cee426e" message="#[payload]"/>
+	</flow>
+</mule>
