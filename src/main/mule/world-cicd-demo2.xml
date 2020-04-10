@@ -23,7 +23,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	city : attributes.uriParams.city
 }]]]></http:uri-params>
 		</http:request>
-		<logger level="INFO" doc:name="Logger" doc:id="ecfd7706-fcd2-40e5-83c6-d406e16c5347" message="--Final step completed---------"/>
+		<logger level="INFO" doc:name="Logger" doc:id="ecfd7706-fcd2-40e5-83c6-d406e16c5347" message="--Final step completed---------////"/>
 		<logger level="INFO" doc:name="Logger" doc:id="0f107cdf-58aa-44d7-aa42-43dd7cee426e" message="#[payload]"/>
 	</flow>
 </mule>
